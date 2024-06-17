@@ -8,7 +8,7 @@ class Item(BaseModel):
 
 
 class Receipt(BaseModel):
-    retailer: Annotated[str, StringConstraints(pattern=r'^[\w\s\&-]+$'), "The name of the retailer or store the receipt is from."]
+    retailer: Annotated[str, StringConstraints(pattern=r'^[\w\s\&-]+$')]
     purchaseDate: Annotated[str, StringConstraints(pattern=r'^\d{4}-\d{2}-\d{2}$')] 
     purchaseTime: Annotated[str, StringConstraints(pattern=r'^\d{2}:\d{2}$')]
     items: list[Item]
